@@ -173,6 +173,10 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
                 {
                     bool startOnBoot = WindowMenuStartOnBoot.IsChecked;
                     app.menuStartOnBoot.Checked = startOnBoot;
+                    if (startOnBoot)
+                        Helper.AddStartup();
+                    else
+                        Helper.RemoveStartup();
                     app.TryToSetStartOnBoot(startOnBoot);
                 }
                 else if (sender == WindowMenuEdgeHide)

@@ -402,6 +402,10 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
         {
             Settings.Default.startOnBoot = startOnBoot;
             Settings.Default.Save();
+            if (startOnBoot)
+                Helper.AddStartup();
+            else
+                Helper.RemoveStartup();
         }
 
         public void TryToShowAboutWindow()
