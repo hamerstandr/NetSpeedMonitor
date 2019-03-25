@@ -11,9 +11,9 @@
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
         Topmost="True"
-        Background="{StaticResource LogoBackground}"
+        
         Title="WelcomeWindow" Height="240" Width="320" WindowStartupLocation="CenterScreen">
-
+    <Border BorderThickness="0" CornerRadius="5" Background="{StaticResource LogoBackground}">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="19,42,0,0" TextWrapping="Wrap" Text="Net Speed" VerticalAlignment="Top" Height="66" Width="243" FontStyle="Italic" FontSize="40" Foreground="{StaticResource LogoNetForeground}"/>
         <TextBlock Text="Monitor" HorizontalAlignment="Left" Margin="116,98,0,0" VerticalAlignment="Top" Height="66" Width="194" FontSize="45" Foreground="{StaticResource LogoMonitorForeground}"/>
@@ -21,4 +21,5 @@
         <TextBlock Text="{DynamicResource Loading_}" HorizontalAlignment="Left" Margin="27,199,0,0" VerticalAlignment="Top" Height="17" Width="69" FontSize="10" Foreground="{StaticResource LogoAutherNameForeground}"/>
         <Image Name="ForeImage" Visibility="Hidden"/>
     </Grid>
+    </Border>
 </Window>

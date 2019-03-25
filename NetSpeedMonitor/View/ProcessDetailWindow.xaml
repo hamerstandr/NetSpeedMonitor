@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         SourceInitialized="Window_SourceInitialized"
-        Title="{DynamicResource Process_Detail}" Height="202" Width="500" MinWidth="300" MinHeight="202" WindowStartupLocation="CenterScreen">
+        Title="{DynamicResource Process_Detail}" Height="178.791" Width="500" MinWidth="300" MinHeight="190" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="RowDefinition">
@@ -48,7 +48,7 @@
             <TextBlock Name="ProcessName" VerticalAlignment="Center" Text="{DynamicResource Unknown}" />
         </DockPanel>
 
-        <TextBox Name="ProcessPath" Grid.Row="2" Grid.Column="1" Style="{StaticResource RightLabel}" IsReadOnly="True" />
+        <TextBlock Name="ProcessPath" Grid.Row="2" Grid.Column="1" Style="{StaticResource RightLabel}"  />
         <Button Name="OpenButton" Grid.Row="3" Grid.Column="1" Style="{StaticResource RightLabel}" HorizontalAlignment="Left">
             <DockPanel>
                 <Image Name="OpenButtonImage" VerticalAlignment="Center" Height="{Binding ElementName=OpenButtonText, Path=FontSize}"/>

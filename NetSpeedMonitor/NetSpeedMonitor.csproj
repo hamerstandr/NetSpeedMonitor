@@ -128,6 +128,10 @@
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\WinAPIWrapper.cs" />
+    <Page Include="Resources\StringResource.fa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -188,7 +192,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="NetSpeedMonitor_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

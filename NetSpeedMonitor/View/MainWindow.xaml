@@ -15,7 +15,7 @@
         MouseLeave="Window_MouseLeave"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Loaded="Window_Loaded"
-        Height="28" Width="132">
+        Height="34" Width="180">
 
     <Window.ContextMenu >
         <ContextMenu>
@@ -45,11 +45,12 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="68"/>
+            <ColumnDefinition/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-
-        <Label Name="DownloadLabel" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,5,2.2" FontSize="10.3" Foreground="Black">0K/s</Label>
-        <Label Name="UploadLabel" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,11,2.2" FontSize="10.3" Foreground="Black">0K/s</Label>
+        <Image Source="/images/down.png" Height="15"  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="12,0,0,0"/>
+        <Image Source="/images/up.png"  Height="15"  Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Left" Margin="5,0,0,0"/>
+        <Label Name="DownloadLabel" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,5,2.2" FontSize="12" Foreground="Black" Margin="0,2,0,6">0K/s</Label>
+        <Label Name="UploadLabel" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0,0,11,2.2" FontSize="12" Foreground="Black">0K/s</Label>
     </Grid>
 </Window>
