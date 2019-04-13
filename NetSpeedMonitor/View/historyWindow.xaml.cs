@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using USTC.Software.hanyizhao.NetSpeedMonitor.Medol;
+using USTC.Software.hanyizhao.NetSpeedMonitor.Model;
 
 namespace USTC.Software.hanyizhao.NetSpeedMonitor.View
 {
@@ -23,7 +23,6 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor.View
         //MedolHistory Data;
         public historyWindow()
         {
-            Data = new MedolHistory();
             InitializeComponent();
             Data.Initialize();
         }

@@ -201,7 +201,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
                 {
                     app.TryToShowAboutWindow();
                 }
-                else if (sender == Total)
+                else if (sender == History)
                 {
                     new View.historyWindow().Show();
                 }

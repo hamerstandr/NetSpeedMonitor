@@ -254,13 +254,13 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             double value = len ;
             if (value < 1024 * 1024)
             {
-                return DoubleLengthMax4(value / 1024) + "Kbit";
+                return DoubleLengthMax4(value / 1024) + "KB";
             }
             if (value < 1024 * 1024 * 1024)
             {
-                return DoubleLengthMax4(value / 1024 / 1024) + "Mbit";
+                return DoubleLengthMax4(value / 1024 / 1024) + "MB";
             }
-            return DoubleLengthMax4(value / 1024 / 1024 / 1024) + "Gbit";
+            return DoubleLengthMax4(value / 1024 / 1024 / 1024) + "GB";
         }
     }
 }

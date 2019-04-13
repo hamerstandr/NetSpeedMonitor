@@ -18,6 +18,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             PathFileData = Path.Combine(PathFileData, "Data.xml");
             Data1 = Data.Load(PathFileData);
         }
+        public EventHandler<string> ChengEvent;
         public void Add(UDStatistic statistics,DateTime date,bool Insert=false)
         {
             Data1.Total.Download+= statistics.download;
@@ -28,7 +29,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
                 Now.Download += statistics.download;
                 Now.Upload += statistics.upload;
             }
-            
+            ChengEvent?.Invoke(this, "Total");
         }
         void HowGetNew(DateTime date)
         {

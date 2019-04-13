@@ -252,7 +252,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
 
         private void InitializeTray()
         {
-            Total = new System.Windows.Forms.MenuItem(Tool.GetStringResource("Total"), TrayMenu_Click);
+            History = new System.Windows.Forms.MenuItem(Tool.GetStringResource("History"), TrayMenu_Click);
             menuExit = new System.Windows.Forms.MenuItem(Tool.GetStringResource("Exit"), TrayMenu_Click);
 
             menuEdgeHide = new System.Windows.Forms.MenuItem(Tool.GetStringResource("HideWhenCloseToEdge"), TrayMenu_Click)
@@ -314,7 +314,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
 
             menuAbout = new System.Windows.Forms.MenuItem(Tool.GetStringResource("AboutNetSpeedMonitor"), TrayMenu_Click);
             System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu(new System.Windows.Forms.MenuItem[] {
-                menuStartOnBoot, menuEdgeHide,Total,menuShowTrayIcon, menuLanguage, menuTransparency, menuUpdate, menuAbout, menuExit });
+                menuStartOnBoot, menuEdgeHide,History,menuShowTrayIcon, menuLanguage, menuTransparency, menuUpdate, menuAbout, menuExit });
 
             notifyIcon = new System.Windows.Forms.NotifyIcon
             {
@@ -487,7 +487,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             {
                 TryToShowAboutWindow();
             }
-            else if (sender == Total)
+            else if (sender == History)
             {
                 new View.historyWindow().Show();
             }
@@ -511,7 +511,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             }));
         }
         int index = 0;
-        public System.Windows.Forms.MenuItem menuExit, menuEdgeHide, menuShowTrayIcon, menuStartOnBoot, menuTransparency, menuAutoUpdate, menuCheckUpdate, menuAbout,Total;
+        public System.Windows.Forms.MenuItem menuExit, menuEdgeHide, menuShowTrayIcon, menuStartOnBoot, menuTransparency, menuAutoUpdate, menuCheckUpdate, menuAbout, History;
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
 
