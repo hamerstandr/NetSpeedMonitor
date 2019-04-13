@@ -32,4 +32,5 @@
     <sys:String x:Key="CurrentVersion">Current Version:</sys:String>
     <sys:String x:Key="ShowTrayIcon">Show tray icon</sys:String>
     <sys:String x:Key="Transparency">Transparency</sys:String>
+    <sys:String x:Key="Total">Total</sys:String>
 </ResourceDictionary>

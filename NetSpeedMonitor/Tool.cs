@@ -249,5 +249,18 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             }
             return DoubleLengthMax4(value / 1024 / 1024 / 1024) + "G/s";
         }
+        public static string ToString(double len)
+        {
+            double value = len ;
+            if (value < 1024 * 1024)
+            {
+                return DoubleLengthMax4(value / 1024) + "Kbit";
+            }
+            if (value < 1024 * 1024 * 1024)
+            {
+                return DoubleLengthMax4(value / 1024 / 1024) + "Mbit";
+            }
+            return DoubleLengthMax4(value / 1024 / 1024 / 1024) + "Gbit";
+        }
     }
 }

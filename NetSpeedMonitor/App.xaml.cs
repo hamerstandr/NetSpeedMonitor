@@ -252,6 +252,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
 
         private void InitializeTray()
         {
+            Total = new System.Windows.Forms.MenuItem(Tool.GetStringResource("Total"), TrayMenu_Click);
             menuExit = new System.Windows.Forms.MenuItem(Tool.GetStringResource("Exit"), TrayMenu_Click);
 
             menuEdgeHide = new System.Windows.Forms.MenuItem(Tool.GetStringResource("HideWhenCloseToEdge"), TrayMenu_Click)
@@ -313,7 +314,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
 
             menuAbout = new System.Windows.Forms.MenuItem(Tool.GetStringResource("AboutNetSpeedMonitor"), TrayMenu_Click);
             System.Windows.Forms.ContextMenu menu = new System.Windows.Forms.ContextMenu(new System.Windows.Forms.MenuItem[] {
-                menuStartOnBoot, menuEdgeHide,menuShowTrayIcon, menuLanguage, menuTransparency, menuUpdate, menuAbout, menuExit });
+                menuStartOnBoot, menuEdgeHide,Total,menuShowTrayIcon, menuLanguage, menuTransparency, menuUpdate, menuAbout, menuExit });
 
             notifyIcon = new System.Windows.Forms.NotifyIcon
             {
@@ -466,7 +467,7 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
                 mainWindow.WindowMenuEdgeHide.IsChecked = menuEdgeHide.Checked;
                 TryToSetEdgeHide(menuEdgeHide.Checked);
             }
-            else if(sender == menuShowTrayIcon)
+            else if (sender == menuShowTrayIcon)
             {
                 menuShowTrayIcon.Checked = !menuShowTrayIcon.Checked;
                 mainWindow.WindowMenuShowTrayIcon.IsChecked = menuShowTrayIcon.Checked;
@@ -482,24 +483,43 @@ namespace USTC.Software.hanyizhao.NetSpeedMonitor
             {
                 TryToCheckUpdate();
             }
-            else if(sender == menuAbout)
+            else if (sender == menuAbout)
             {
                 TryToShowAboutWindow();
             }
+            else if (sender == Total)
+            {
+                new View.historyWindow().Show();
+            }
         }
-
+        public static History _History=new History();
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             UDStatistic statistics = udMap.NextStatistic(10, portProcessMap);
             Dispatcher.Invoke(new Action(() =>
             {
                 mainWindow.NewData(statistics);
+                if (index != 600)
+                    _History.Add(statistics,DateTime.Now);
+                if (index == 600)//10 minet
+                {
+                    _History.Add(statistics, DateTime.Now,true);
+                    index = -1;
+                    _History.Save();
+                }
+                index++;
             }));
         }
-
-        public System.Windows.Forms.MenuItem menuExit, menuEdgeHide, menuShowTrayIcon, menuStartOnBoot, menuTransparency, menuAutoUpdate, menuCheckUpdate, menuAbout;
+        int index = 0;
+        public System.Windows.Forms.MenuItem menuExit, menuEdgeHide, menuShowTrayIcon, menuStartOnBoot, menuTransparency, menuAutoUpdate, menuCheckUpdate, menuAbout,Total;
 
         private System.Windows.Forms.NotifyIcon notifyIcon;
+
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            _History.Save();
+        }
+
         private MainWindow mainWindow;
         private WelcomeWindow welcomeWindow;
         private CaptureManager captureManager;

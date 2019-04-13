@@ -104,7 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="History.cs" />
+    <Compile Include="Medol\MedolHistory.cs" />
     <Compile Include="View\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
     <Compile Include="Service\NetworkStructure.cs" />
     <Compile Include="Service\PortProcessMap.cs" />
     <Compile Include="Service\PortProcessMapWrapper.cs" />
+    <Compile Include="View\historyWindow.xaml.cs">
+      <DependentUpon>historyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProcessDetailWindow.xaml.cs">
       <DependentUpon>ProcessDetailWindow.xaml</DependentUpon>
     </Compile>
@@ -138,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DetailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\historyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
