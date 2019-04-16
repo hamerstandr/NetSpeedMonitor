@@ -14,12 +14,14 @@
         
         Title="WelcomeWindow" Height="240" Width="320" WindowStartupLocation="CenterScreen">
     <Border BorderThickness="0" CornerRadius="5" Background="{StaticResource LogoBackground}">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="19,42,0,0" TextWrapping="Wrap" Text="Net Speed" VerticalAlignment="Top" Height="66" Width="243" FontStyle="Italic" FontSize="40" Foreground="{StaticResource LogoNetForeground}"/>
-        <TextBlock Text="Monitor" HorizontalAlignment="Left" Margin="116,98,0,0" VerticalAlignment="Top" Height="66" Width="194" FontSize="45" Foreground="{StaticResource LogoMonitorForeground}"/>
-        <TextBlock Text="HanYizhao" HorizontalAlignment="Left" Margin="234,167,0,0" VerticalAlignment="Top" Height="17" Width="69" FontSize="10" Foreground="{StaticResource LogoAutherNameForeground}"/>
-        <TextBlock Text="{DynamicResource Loading_}" HorizontalAlignment="Left" Margin="27,199,0,0" VerticalAlignment="Top" Height="17" Width="69" FontSize="10" Foreground="{StaticResource LogoAutherNameForeground}"/>
-        <Image Name="ForeImage" Visibility="Hidden"/>
-    </Grid>
+        <Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="19,42,0,0" TextWrapping="Wrap" Text="Net Speed" VerticalAlignment="Top" Height="66" Width="243" FontStyle="Italic" FontSize="40" Foreground="{StaticResource LogoNetForeground}"/>
+            <TextBlock Text="Monitor" HorizontalAlignment="Left" Margin="116,98,0,0" VerticalAlignment="Top" Height="66" Width="194" FontSize="45" Foreground="{StaticResource LogoMonitorForeground}"/>
+            <TextBlock Text="HanYizhao" HorizontalAlignment="Left" Margin="241,201,0,0" VerticalAlignment="Top" Height="17" Width="69" FontSize="10" Foreground="{StaticResource LogoAutherNameForeground}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="225,169,0,0" TextWrapping="Wrap" Text="Editor:" VerticalAlignment="Top" Width="85" Foreground="{StaticResource LogoAutherNameForeground}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="225,185,0,0" TextWrapping="Wrap" Text="hamed momen" VerticalAlignment="Top" Width="95" Foreground="{StaticResource LogoAutherNameForeground}"/>
+            <TextBlock Text="{DynamicResource Loading_}" HorizontalAlignment="Left" Margin="27,199,0,0" VerticalAlignment="Top" Height="17" Width="69" FontSize="10" Foreground="{StaticResource LogoAutherNameForeground}"/>
+            <Image Name="ForeImage" Visibility="Hidden"/>
+        </Grid>
     </Border>
 </Window>
